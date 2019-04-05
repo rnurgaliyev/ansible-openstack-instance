@@ -2,7 +2,7 @@
 
 - name: Perform full upgrade of an operating system
   apt:
-    upgrade: full
+    upgrade: dist
     update_cache: True
     cache_valid_time: 3600
     autoclean: True
