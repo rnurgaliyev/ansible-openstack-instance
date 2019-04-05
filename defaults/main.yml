@@ -7,6 +7,9 @@ openstack_instance_key_name: ""
 openstack_instance_network: ""
 openstack_instance_security_groups: []
 
+# Set region if required
+#openstack_instance_region_name: ""
+
 # These vaules can be overriden if required
 openstack_instance_default_user: "ubuntu"
 openstack_instance_gather_facts: True

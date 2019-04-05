@@ -12,6 +12,7 @@
     network: "{{ openstack_instance_network }}"
     auto_ip: "{{ openstack_instance_public_ip }}"
     security_groups: "{{ openstack_instance_security_groups }}"
+    region_name: "{{ openstack_instance_region_name | default(omit) }}"
   register: os_provisioned_instance
 
 - name: Update ansible host ip address to public ip address
