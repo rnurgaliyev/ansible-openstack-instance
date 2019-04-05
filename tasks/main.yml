@@ -1,0 +1,16 @@
+---
+
+- name: Provision instance
+  include_tasks: provision.yml
+
+- name: Install python for ansible
+  include_tasks: python.yml
+  when: openstack_instance_install_python
+
+- name: Gather facts
+  setup:
+  when: openstack_instance_gather_facts
+
+- name: Perform full operating system upgrade
+  include_tasks: upgrade.yml
+  when: openstack_instance_perform_full_upgrade

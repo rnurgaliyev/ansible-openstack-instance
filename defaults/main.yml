@@ -1,0 +1,6 @@
+---
+
+openstack_instance_default_user: "ubuntu"
+openstack_instance_gather_facts: True
+openstack_instance_install_python: True
+openstack_instance_perform_full_upgrade: True
