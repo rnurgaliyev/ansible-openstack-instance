@@ -5,14 +5,13 @@
   delegate_to: localhost
   become: False
   os_server:
-    name: "{{ openstack_instance_name | default(inventory_hostname) }}"
+    name: "{{ openstack_instance_name }}"
     image: "{{ openstack_instance_image }}"
     flavor: "{{ openstack_instance_flavor }}"
     key_name: "{{ openstack_instance_key_name }}"
     network: "{{ openstack_instance_network }}"
-    auto_ip: "{{ openstack_instance_public_ip | default(False) }}"
+    auto_ip: "{{ openstack_instance_public_ip }}"
     security_groups: "{{ openstack_instance_security_groups }}"
-    region_name: "{{ openstack_instance_region | default(omit) }}"
   register: os_provisioned_instance
 
 - name: Update ansible host ip address to public ip address
