@@ -12,6 +12,5 @@
   when: openstack_instance_gather_facts
 
 - name: Perform full operating system upgrade
-  become: True
   include_tasks: upgrade.yml
   when: openstack_instance_perform_full_upgrade
