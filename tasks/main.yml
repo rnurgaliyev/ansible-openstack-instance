@@ -5,12 +5,12 @@
 
 - name: Install python for ansible
   include_tasks: python.yml
-  when: openstack_instance_install_python
+  when: openstack_instance_install_python|bool
 
 - name: Gather facts
   setup:
-  when: openstack_instance_gather_facts
+  when: openstack_instance_gather_facts|bool
 
 - name: Perform full operating system upgrade
   include_tasks: upgrade.yml
-  when: openstack_instance_perform_full_upgrade
+  when: openstack_instance_perform_full_upgrade|bool
